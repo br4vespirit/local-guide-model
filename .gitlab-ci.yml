@@ -1,0 +1,40 @@
+image: docker:19.03.12
+
+
+services:
+  - docker:19.03.12-dind
+
+before_script:
+  - apk update && apk add git
+
+stages:
+  - test
+  - host
+
+sast:
+  stage: test
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+
+host:
+  stage: host
+  script:
+    - git clone https://git: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@huggingface.co/spaces/dazai555/local-guide
+    - cp -r data ./local-guide/
+    - cp -r routers ./local-guide/
+    - cp -r schema ./local-guide/
+    - cp -r utils ./local-guide/
+    - cp requirements.txt ./local-guide/requirements.txt
+    - cp Dockerfile ./local-guide/Dockerfile
+    - cd local-guide
+    - git config --global user.email "local_guide@mail.com"
+    - git config --global user.name "Local Guide Team"
+    - git add .
+    - git commit -am "Updated model"
+    - git push origin main
+  only:
+    - master
+    - devel
+  when: manual

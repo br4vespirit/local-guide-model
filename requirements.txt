@@ -1,0 +1,6 @@
+langchain
+pydantic
+fastapi
+uvicorn
+sentence-transformers
+faiss-gpu
