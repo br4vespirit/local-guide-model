@@ -1,7 +1,7 @@
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from schema.models import *
+import schema.models
 from utils.model import get_response_from_model
 
 app = FastAPI()
