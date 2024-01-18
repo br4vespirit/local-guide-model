@@ -7,8 +7,7 @@ from langchain.vectorstores import FAISS
 from langchain.document_loaders import TextLoader
 from langchain.chains import RetrievalQA
 
-# test
-huggingfacehub_api_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 
 llm = HuggingFaceHub(
     repo_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
