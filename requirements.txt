@@ -2,5 +2,6 @@ langchain
 pydantic
 fastapi
 uvicorn
-sentence-transformers>=0.1.0,<3.0.0
+torch
+sentence-transformers
 faiss-cpu
