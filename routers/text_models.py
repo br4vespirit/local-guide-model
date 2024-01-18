@@ -1,8 +1,15 @@
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-import schema.models
 from utils.model import get_response_from_model
+
+from pydantic import BaseModel
+
+class TextRequest(BaseModel):
+    text: str
+
+class TextResponse(BaseModel):
+    response: str
 
 app = FastAPI()
 router = APIRouter()
