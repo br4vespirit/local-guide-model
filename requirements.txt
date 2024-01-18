@@ -2,5 +2,5 @@ langchain
 pydantic
 fastapi
 uvicorn
-sentence-transformers
+sentence-transformers==2.2.2
 faiss-cpu
