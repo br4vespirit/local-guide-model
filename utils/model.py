@@ -18,7 +18,7 @@ llm = HuggingFaceHub(
 )
 
 def get_links():
-    with open("../data/links.txt", "r", encoding="utf-8") as file:
+    with open("data/links.txt", "r", encoding="utf-8") as file:
         data = file.read()
     
     lines = data.strip().split('\n')
@@ -45,7 +45,7 @@ def find_places_and_links(text, places):
     
     return results
 
-reviews_file_path = "../data/data.txt"
+reviews_file_path = "data/data.txt"
 with open(reviews_file_path, "r", encoding="utf-8") as file:
     reviews = file.read().splitlines()
 
